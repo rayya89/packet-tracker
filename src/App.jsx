@@ -2,12 +2,15 @@
 import {useEffect, useState} from "react"
 
 //Project files
-import Order from "./components/Order.jsx"
+import OrdersScreen from "./screens/OrdersScreen";
+import LoadingScreen from "./screens/LoadingScreen";
+import ErrorScreen from "./screens/ErrorScreen";
 
 export default function App() {
 
   //Local state
   const [orders, setOrders] = useState([]);
+  const [status, setStatus] = useState(0);
 
   //Properties
   const url = "https://my.api.mockaroo.com/insta-orders.json?key=e49e6840";
@@ -16,19 +19,25 @@ export default function App() {
   useEffect (() => loadData(url,setOrders),[]);
 
   async function loadData(url,setState) {
+    try{
     const response = await fetch(url);
     const json= await response.json();
     setState(json);
-    console.log(json);
+    setStatus(1);
+    console.log(json);}
+    catch(error){
+      console.error("Loading error",error);
+      setStatus(2);
+    }
   }
 
-  // Components
-  const OrdersList = orders.map((order) => <Order key={order.id} order={order}/>); 
+   
 
   return (
     <div className="App">
-      <h1>HI</h1>
-      <ul>{OrdersList}</ul>
+      {status === 0 && <LoadingScreen/>}
+      {status === 1 && <OrdersScreen orders={orders}/>}
+      {status === 2 && <ErrorScreen/>}
     </div>
   );
 }
