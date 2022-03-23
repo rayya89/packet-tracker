@@ -1,6 +1,9 @@
 //NPM Packages
 import {useEffect, useState} from "react"
 
+//Project files
+import Order from "./components/Order.jsx"
+
 export default function App() {
 
   //Local state
@@ -19,9 +22,13 @@ export default function App() {
     console.log(json);
   }
 
+  // Components
+  const OrdersList = orders.map((order) => <Order key={order.id} order={order}/>); 
+
   return (
     <div className="App">
       <h1>HI</h1>
+      <ul>{OrdersList}</ul>
     </div>
   );
 }
