@@ -1,4 +1,4 @@
-import Order from "../components/Order.jsx"
+import OrderItem from "../components/OrderItem.jsx";
 
 export default function OrdersScreen({ orders }) {
 
@@ -18,21 +18,22 @@ export default function OrdersScreen({ orders }) {
      console.log(delivery_status.delivered)
 
     // Components
-//   const OrdersList = orders.map((order) => <Order key={order.id} order={order}/>);
+  const OrdersList = orders.map((order) => <OrderItem key={order.id} order={order}/>);
 
-const DeliveredList = delivery_status.delivered.map((order) => <Order key={order.id} order={order}/>);
-const OnTheWayList = delivery_status["on-the-way"].map((order) => <Order key={order.id} order={order}/>);
-const OrderRecievedList = delivery_status["order-info-received"].map((order) => <Order key={order.id} order={order}/>);
-const ReadyList = delivery_status["ready-for-pickup"].map((order) => <Order key={order.id} order={order}/>);
+// const DeliveredList = delivery_status.delivered.map((order) => <Order key={order.id} order={order}/>);
+// const OnTheWayList = delivery_status["on-the-way"].map((order) => <Order key={order.id} order={order}/>);
+// const OrderRecievedList = delivery_status["order-info-received"].map((order) => <Order key={order.id} order={order}/>);
+// const ReadyList = delivery_status["ready-for-pickup"].map((order) => <Order key={order.id} order={order}/>);
 
 
   return (
     <div>
         <h1>HI</h1>
-      <ul>{DeliveredList}</ul>
+        <ul>{OrdersList}</ul>
+      {/* <ul>{DeliveredList}</ul>
       <ul>{OnTheWayList}</ul>
       <ul>{OrderRecievedList}</ul>
-      <ul>{ReadyList}</ul>
+      <ul>{ReadyList}</ul> */}
     </div>
   )
 }
