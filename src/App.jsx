@@ -1,43 +1,16 @@
 //NPM Packages
-import {useEffect, useState} from "react"
+import { Routes, Route } from "react-router-dom";
 
 //Project files
-import OrdersScreen from "./screens/OrdersScreen";
-import LoadingScreen from "./screens/LoadingScreen";
-import ErrorScreen from "./screens/ErrorScreen";
+import OrdersListPage from "./pages/OrdersListPage"
 
 export default function App() {
 
-  //Local state
-  const [orders, setOrders] = useState([]);
-  const [status, setStatus] = useState(0);
-
-  //Properties
-  const url = "https://my.api.mockaroo.com/insta-orders.json?key=e49e6840";
-
-  //Methods
-  useEffect (() => loadData(url,setOrders),[]);
-
-  async function loadData(url,setState) {
-    try{
-    const response = await fetch(url);
-    const json= await response.json();
-    setState(json);
-    setStatus(1);
-    console.log(json);}
-    catch(error){
-      console.error("Loading error",error);
-      setStatus(2);
-    }
-  }
-
-   
-
   return (
     <div className="App">
-      {status === 0 && <LoadingScreen/>}
-      {status === 1 && <OrdersScreen orders={orders}/>}
-      {status === 2 && <ErrorScreen/>}
+      <Routes>
+        <Route path="/" element={<OrdersListPage/>} />
+      </Routes>
     </div>
   );
 }
