@@ -1,4 +1,5 @@
 import {Link} from 'react-router-dom'
+import parcelIcon from "../assests/parcelPhoto.png"
 
 export default function OrderItem({ order }) {
 const { sender, status, parcel_id } = order;
@@ -7,7 +8,8 @@ const { sender, status, parcel_id } = order;
 
   return (
     <li className="order">
-        <Link to={`/parcel/${parcel_id}`} state={{data: order}}>
+       <img src={parcelIcon} alt="parcel icon"/>
+        <Link to={`/parcel/${parcel_id}`} state={{orderData: order}}>
         <p>{sender}</p>
         <p>{status}</p> 
         </Link>
