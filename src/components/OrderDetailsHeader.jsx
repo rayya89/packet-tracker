@@ -14,7 +14,7 @@ export default function OrderDetailsHeader({ status }) {
 
   return (
     <div>
-        <nav>
+    <nav>
     <button onClick={() => navigate(-1)}><FontAwesomeIcon icon={faAngleLeft} /></button>
     <span>Order details</span>
     </nav>

@@ -1,7 +1,6 @@
 //Project files
 import ErrorImage from "../assests/Error.png"
 
-
 export default function ErrorScreen({ setStatus, orders } ) {
 
   //Properties

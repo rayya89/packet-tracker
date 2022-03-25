@@ -5,7 +5,7 @@ export default function NoOrdersScreen() {
     <div>
         <img src={NoOrders} alt="empty List"/>
         <p>
-         You don't have any orders to show
+         You don't have any orders to show..
         </p>
     </div>
   )
