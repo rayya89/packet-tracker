@@ -13,7 +13,7 @@ export default function OrdersListPage() {
   const [status, setStatus] = useState(0);
 
   //Properties
-  const url = "https://my.api.mockaroo.com/insta-orders.json?key=e49e6840";
+  const url = "https://mmy.api.mockaroo.com/insta-orders.json?key=e49e6840";
 
   //Methods
   useEffect (() => loadData(url,setOrders,setStatus),[]);
@@ -25,19 +25,19 @@ export default function OrdersListPage() {
     const json= await response.json();
     setState(json);
     setStatus(1);
-    console.log(json);}
+    console.log(json);
+  }
     catch(error){
       console.error("Loading error",error);
       setStatus(2);
     }
   }
 
-
   return (
     <div><div className="App">
       {status === 0 && <LoadingScreen/>}
       {status === 1 && <OrdersScreen orders={orders}/>}
-      {status === 2 && <ErrorScreen/>}
+      {status === 2 && <ErrorScreen setStatus={setStatus}/>}
     </div></div>
   )
 }

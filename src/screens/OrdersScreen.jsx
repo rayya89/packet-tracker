@@ -6,9 +6,12 @@ import OrdersScreenHeader from "../components/OrdersScreenHeader.jsx";
 
 export default function OrdersScreen({ orders }) {
 
+
   // Safeguards
   if (orders.length === 0) return <NoOrdersScreen/>;
+  localStorage.setItem("orders", JSON.stringify(orders));
 
+ 
   // Properties
   const onGoingOrders = orders.filter(order => order.status !== "delivered" );
   const DeliveredOrders = orders.filter(order => order.status === "delivered" );
