@@ -24,8 +24,6 @@ export default function OrdersListPage() {
     const response = await fetch(url);
     const json= await response.json();
     setState(json);
-    // Safeguards
-    if (json.length === 0) return <p>No orders to show...</p>;
     setStatus(1);
     console.log(json);}
     catch(error){
