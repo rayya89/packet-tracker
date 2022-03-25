@@ -1,0 +1,27 @@
+.orders-screen-nav {
+  background-color: var(--swatch-grey);
+  height: 6vh;
+  border-radius: var(--border-radius);
+  display: grid;
+  place-content: center;
+  color: var(--swatch-white);
+  margin-bottom: var(--space-small);
+}
+
+.orders-screen-nav span {
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.orders-screen-header {
+  background-color: var(--swatch-grey);
+  opacity: 0.7;
+  height: 10vh;
+  border-radius: var(--border-radius);
+  border-top-right-radius: 25px;
+  display: grid;
+  place-content: center;
+  color: var(--swatch-blue);
+  margin-bottom: var(--space-medium);
+}

@@ -1,0 +1,13 @@
+.error-screen p {
+  margin-bottom: var(--space-small);
+}
+
+.error-screen button {
+  background-color: var(--swatch-blue);
+  height: 44px;
+  min-width: 175px;
+  color: var(--swatch-white);
+  border: none;
+  border-radius: var(--border-radius);
+  font-family: "Poppins", sans-serif;
+}

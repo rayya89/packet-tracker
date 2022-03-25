@@ -1,0 +1,13 @@
+.orders-screen {
+  padding: var(--space-small) var(--space-small);
+}
+
+.orders-section {
+  padding-left: var(--space-medium);
+  padding-right: var(--space-medium);
+  margin-bottom: var(--space-big);
+}
+
+.orders-section ul {
+  padding-left: var(--space-small);
+}

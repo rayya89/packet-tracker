@@ -2,11 +2,9 @@ import NoOrders from "../assests/NoOrders.png"
 
 export default function NoOrdersScreen() {
   return (
-    <div>
+    <div className="no-order-screen">
         <img src={NoOrders} alt="empty List"/>
-        <p>
-         You don't have any orders to show..
-        </p>
+        <h1>You don't have any orders to show..</h1>
     </div>
   )
 }

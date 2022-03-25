@@ -24,14 +24,14 @@ export default function OrdersScreen({ orders }) {
 
 
   return (
-    <div>
+    <div className="orders-screen">
       <OrdersScreenHeader/>
-      <section>
+      <section className="orders-section">
         <h2>Ongoing orders</h2>
         { onGoingOrdersExist ? <ul>{OngoingList}</ul> : <p>You don't have any ongoing orders</p>}
         </section>
-        <section>
-        <h1>Delivered orders</h1>
+        <section className="orders-section">
+        <h2>Delivered orders</h2>
         { DeliveredOrdersExist ? <ul>{DeliveredList}</ul> : <p>You don't have any delivered orders</p>}
         </section>
     </div>

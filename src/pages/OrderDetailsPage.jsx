@@ -16,12 +16,12 @@ export default function OrderDetailsPage() {
   const deliveryTime=eta;
 
   return (
-    <div>
+    <div className="details-page">
     <OrderDetailsHeader status={status}/>
-    <section>
+    <section className="details-information">
     <DeliveryInformation deliveryTime={deliveryTime} location_name={location_name} locationCoordinates={locationCoordinates} /> 
     <ParcelInformation sender={sender} parcel_id={parcel_id} verification_required={verification_required}/>
-    {(notes)!=null && <article><h2>Additional Information</h2><p>{notes}</p></article>}
+    {(notes)!=null && <article className="details-article"><h2>Additional Information</h2><p>{notes}</p></article>}
     <AppData last_updated={last_updated} />
     </section>
     </div>

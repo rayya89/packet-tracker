@@ -1,0 +1,30 @@
+/* .details-page {
+  padding: var(--space-small) var(--space-small);
+} */
+
+.details-information {
+  padding: var(--space-medium) var(--space-medium);
+}
+
+.details-article {
+  margin-bottom: var(--space-small);
+  padding-bottom: var(--space-small);
+  border-bottom: solid 1px var(--swatch-blue);
+}
+
+.details-article h2 {
+  margin-bottom: var(--space-small);
+  color: var(--swatch-blue);
+}
+
+.details-article p {
+  margin-bottom: var(--space-small);
+}
+
+.details-article .location-name {
+  margin-bottom: 0;
+}
+
+.details-article .item-link {
+  text-decoration: underline;
+}

@@ -10,12 +10,14 @@ const { sender, status, parcel_id } = order;
 //Properties
 
   return (
-    <li className="order">
+    <Link className="item-link" to={`/parcel/${parcel_id}`} state={{orderData: order}}>
+      <li className="order-item">
        <img src={parcelIcon} alt="parcel icon"/>
-        <Link to={`/parcel/${parcel_id}`} state={{orderData: order}}>
-        <p>{sender}</p>
-        <p>{status}</p> 
-        </Link>
-    </li>
+       <article className='item-text'>
+        <p className="sender-name">{sender}</p>
+        <span className="parcel-status">{status}</span> 
+        </article>
+      </li>
+    </Link>
   )
 }

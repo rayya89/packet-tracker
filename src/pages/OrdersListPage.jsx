@@ -33,10 +33,10 @@ export default function OrdersListPage() {
   }
 
   return (
-    <div><div className="App">
+    <div className="OrdersList-page">
       {status === 0 && <LoadingScreen/>}
       {status === 1 && <OrdersScreen orders={orders}/>}
       {status === 2 && <ErrorScreen setStatus={setStatus}/>}
-    </div></div>
+    </div>
   )
 }

@@ -1,0 +1,31 @@
+.order-item {
+  display: flex;
+  gap: var(--space-small);
+  margin-bottom: var(--space-medium);
+  padding: var(--space-small);
+  border: solid 1px var(--swatch-blue);
+  border-radius: var(--border-radius);
+}
+
+.order-item img {
+  object-fit: contain;
+}
+
+.order-item:hover {
+  background-color: var(--swatch-blue-light);
+}
+
+.item-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.sender-name {
+  font-weight: 750;
+}
+
+.parcel-status {
+  color: var(--swatch-blue);
+  font-weight: 650;
+}

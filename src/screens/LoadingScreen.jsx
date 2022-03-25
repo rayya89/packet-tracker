@@ -4,9 +4,9 @@ import { faSpinner } from '@fortawesome/free-solid-svg-icons';
 
 export default function LoadingScreen() {
   return (
-    <div>
+    <div className="loading-screen">
         <FontAwesomeIcon icon={faSpinner} />
-        <p>The data is loading thank you for waiting..</p>
+        <h1>The data is loading thank you for waiting..</h1>
     </div>
   )
 }
