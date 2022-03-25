@@ -18,11 +18,14 @@ export default function OrdersListPage() {
   //Methods
   useEffect (() => loadData(url,setOrders,setStatus),[]);
 
+
   async function loadData(url,setState,setStatus) {
     try{
     const response = await fetch(url);
     const json= await response.json();
     setState(json);
+    // Safeguards
+    if (json.length === 0) return <p>No orders to show...</p>;
     setStatus(1);
     console.log(json);}
     catch(error){

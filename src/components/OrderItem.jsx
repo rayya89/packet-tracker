@@ -1,4 +1,7 @@
+//NPM Packages
 import {Link} from 'react-router-dom'
+
+//Project files
 import parcelIcon from "../assests/parcelPhoto.png"
 
 export default function OrderItem({ order }) {
