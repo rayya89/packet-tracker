@@ -15,7 +15,7 @@ export default function DeliveryInformation({ deliveryTime, location_name, locat
         <p className="location-name">
           {location_name}
         </p>
-        <a className="item-link" href={`https://maps.google.com/?q=${location_lat},${location_long}`}>Delivery address</a>
+        <a className="item-link" href={`https://maps.google.com/?q=${location_lat},${location_long}`}>Delivery address location</a>
     </article>
   )
 }
