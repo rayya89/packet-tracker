@@ -1,23 +1,28 @@
 //NPM Packages
-import {Link} from 'react-router-dom'
+import { Link } from "react-router-dom";
 
 //Project files
-import parcelIcon from "../assests/parcelPhoto.png"
+import parcelIcon from "../assests/parcelPhoto.png";
 
+// good
 export default function OrderItem({ order }) {
-const { sender, status, parcel_id } = order;
+  const { sender, status, parcel_id } = order;
 
-//Properties
+  //Properties
 
   return (
-    <Link className="item-link" to={`/parcel/${parcel_id}`} state={{orderData: order}}>
+    <Link
+      className="item-link"
+      to={`/parcel/${parcel_id}`}
+      state={{ orderData: order }}
+    >
       <li className="order-item">
-       <img src={parcelIcon} alt="parcel icon"/>
-       <article className='item-text'>
-        <p className="sender-name">{sender}</p>
-        <span className="parcel-status">{status}</span> 
+        <img src={parcelIcon} alt="parcel icon" />
+        <article className="item-text">
+          <p className="sender-name">{sender}</p>
+          <span className="parcel-status">{status}</span>
         </article>
       </li>
     </Link>
-  )
+  );
 }

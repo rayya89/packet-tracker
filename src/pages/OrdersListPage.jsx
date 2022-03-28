@@ -1,14 +1,15 @@
 //NPM Packages
-import {useEffect, useState} from "react"
+import { useEffect, useState } from "react";
 
 //Project files
 import OrdersScreen from "../screens/OrdersScreen";
 import LoadingScreen from "../screens/LoadingScreen";
 import ErrorScreen from "../screens/ErrorScreen";
 
+// The app organization can be improved.
+// This component fetches the data, but on
 export default function OrdersListPage() {
-
-    //Local state
+  //Local state
   const [orders, setOrders] = useState([]);
   const [status, setStatus] = useState(0);
 
@@ -16,27 +17,25 @@ export default function OrdersListPage() {
   const url = "https://my.api.mockaroo.com/insta-orders.json?key=e49e6840";
 
   //Methods
-  useEffect (() => loadData(url,setOrders,setStatus),[]);
+  useEffect(() => loadData(url, setOrders, setStatus), []);
 
-
-  async function loadData(url,setState,setStatus) {
-    try{
-    const response = await fetch(url);
-    const json= await response.json();
-    setState(json);
-    setStatus(1);
-  }
-    catch(error){
-      console.error("Loading error",error);
+  async function loadData(url, setState, setStatus) {
+    try {
+      const response = await fetch(url);
+      const json = await response.json();
+      setState(json);
+      setStatus(1);
+    } catch (error) {
+      console.error("Loading error", error);
       setStatus(2);
     }
   }
 
   return (
     <div className="OrdersList-page">
-      {status === 0 && <LoadingScreen/>}
-      {status === 1 && <OrdersScreen orders={orders}/>}
-      {status === 2 && <ErrorScreen setStatus={setStatus}/>}
+      {status === 0 && <LoadingScreen />}
+      {status === 1 && <OrdersScreen orders={orders} />}
+      {status === 2 && <ErrorScreen setStatus={setStatus} />}
     </div>
-  )
+  );
 }
