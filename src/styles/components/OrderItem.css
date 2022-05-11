@@ -1,14 +1,14 @@
 .order-item {
   display: flex;
   gap: var(--space-small);
-  margin-bottom: var(--space-medium);
   padding: var(--space-small);
   border: solid 1px var(--swatch-blue);
   border-radius: var(--border-radius);
+  height: 100%;
 }
 
 .order-item img {
-  object-fit: contain;
+  width: 60px;
 }
 
 .order-item:hover {
@@ -28,4 +28,12 @@
 .parcel-status {
   color: var(--swatch-blue);
   font-weight: 650;
+}
+
+@media (min-width: 750px) {
+  .order-item img {
+    object-fit: contain;
+    width: 75px;
+    height: auto;
+  }
 }
